@@ -1,0 +1,33 @@
+<?xml version="1.0"?>
+
+<service-builder dependency-injector="ds"
+	package-path="com.alepo.se.administrator">
+	<namespace>administrator</namespace>
+	<created>2021-11-21 08:10:10</created>
+	<!-- HelpDocs -->
+	<entity name="HelpDoc" table="helpdoc" local-service="true"
+		cache-enabled="false" remote-service="false">
+		<column name="helpDocId" db-name="helpdocid" type="long"
+			primary="true" />
+		<column name="pointer" type="String" />
+		<column name="link" type="String" />
+		<column name="description" type="String" />
+		<column name="helpDocConfigurationId"
+			db-name="helpdocconfigurationid" type="long" />
+		<finder return-type="HelpDoc" name="pointer">
+			<finder-column name="pointer" />
+		</finder>
+	</entity>
+	<entity name="HelpDocConfiguration" table="helpdocconfiguration"
+		local-service="true" cache-enabled="false" remote-service="false">
+		<column name="helpDocConfigurationId"
+			db-name="helpdocconfigurationid" type="long" primary="true" />
+		<column name="pagename" type="String" />
+		<column name="url" type="String" />
+		<column name="suffix" type="String" />
+		<column name="urlparameters" type="String" />
+		<finder return-type="HelpDocConfiguration" name="pagename">
+			<finder-column name="pagename" />
+		</finder>
+	</entity>
+</service-builder>

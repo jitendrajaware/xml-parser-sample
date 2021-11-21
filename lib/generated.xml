@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<service-builder dependency-injector="ds" package-path="com.alepo.se.administrator">
+    <created>2021-11-21 08:10:10</created>
+    <namespace>administrator</namespace>
+    <entity name="HelpDoc" table="helpdoc">
+        <column name="description" type="String" primary="false"/>
+        <column name="helpDocId" db-name="helpdocid" type="long" primary="true"/>
+        <column name="pointer" type="String" primary="false"/>
+        <column name="helpDocConfigurationId" db-name="helpdocconfigurationid" type="long" primary="false"/>
+        <column name="link" type="String" primary="false"/>
+    </entity>
+    <entity name="HelpDocConfiguration" table="helpdocconfiguration">
+        <column name="helpDocConfigurationId" db-name="helpdocconfigurationid" type="long" primary="true"/>
+        <column name="pagename" type="String" primary="false"/>
+        <column name="urlparameters" type="String" primary="false"/>
+        <column name="url" type="String" primary="false"/>
+        <column name="suffix" type="String" primary="false"/>
+    </entity>
+</service-builder>
